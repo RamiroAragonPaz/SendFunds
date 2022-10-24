@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Form from "./Form";
-import styles from '../styles/Home.module.css';
-
+import "./Home.css";
 
 function Home(){
     const[currentAccount, setCurrentAccount] = useState("");
@@ -39,7 +37,6 @@ function Home(){
             });
 
             console.log("Connected", accounts[0]);
-            location.reload();
         } catch (error) {
             console.log(error);
         }
@@ -58,15 +55,15 @@ function Home(){
         <div className="App">
             {currentAccount.length ===0 ? (
                 <div>
-                    <div className={styles.nav}>
-                        <h1 className={styles.h1}>SendFunds ⟠</h1>
+                    <div>
+                        <h1>SendFunds</h1>
                     </div>
-                    <div className={styles.content}>
+                    <div className="content">
                         <div>
-                            <p className={styles.description}>
-                                Send ⟠<i className="fa-brands fa-ethereum"></i> to your friends and family.
+                            <p className="description">
+                                Send <i className="fa-brands fa-ethereum"></i> to your friends and family.
                             </p>
-                            <button className={styles.connectBtn} onClick={()=> connectWallet()}>
+                            <button className="connect-btn" onClick={()=> connectWallet()}>
                                 Connect Wallet
                             </button>
                         </div>
@@ -74,19 +71,17 @@ function Home(){
                 </div>
             ) : (
                 <div>
-                    <div className={styles.navFlex}>
-                        <h1 className={styles.h1}>SendFunds ⟠</h1>
-                        <p className={styles.walletAddress}>Wallet Connected: {truncate(currentAccount)}</p>
+                    <div className="nav flex">
+                        <h1>SendFunds</h1>
+                        <p className="wallet-address">{truncate(currentAccount)}</p>
                     </div>
-                    <div className={styles.connectedWallet}>
-                        <p className={styles.description}>
-                            Send ⟠ to your friends and family.
+                    <div className="content connected-wallet">
+                        <p className="description">
+                            Send <i className="fa-brands fa-ethereum"></i> to your friends and family.
                         </p>
                     </div>
                 </div>
             )}
-            <Form />
-            <footer className={styles.footer}>Made with &#10084; by Ramiro Aragon Paz</footer>
         </div>
     );
 }
