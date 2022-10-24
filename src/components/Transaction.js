@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../styles/Transaction.module.css';
+import styles from '../../styles/Transaction.module.css';
 import moment from 'moment';
 import { ethers } from "ethers";
 

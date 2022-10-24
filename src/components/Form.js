@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import styles from '../styles/Form.module.css';
+import styles from '../../styles/Form.module.css';
 import { ethers } from "ethers";
-import abi from "../src/utils/Sendfunds.json";
+import abi from "../utils/Sendfunds.json";
 import { parseEther } from "ethers/lib/utils";
 import  Transaction  from "./Transaction";
 
